@@ -1,0 +1,5 @@
+ezpublish:
+  system:
+    default:
+      fielddefinition_edit_templates:
+        - { template: "@ezdesign/fieldtype/maskedtextline_definition_edit.html.twig", priority: 1 }

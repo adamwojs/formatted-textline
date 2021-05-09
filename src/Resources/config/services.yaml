@@ -1,0 +1,15 @@
+imports:
+    - { resource: fieldtype/masked_textline.yaml }
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    AdamWojs\IbexaFormattedTextLineBundle\MVC\Symfony\Templating\FallbackFieldBlockRenderer:
+        decorates: ezpublish.templating.field_block_renderer.twig
+
+    AdamWojs\IbexaFormattedTextLineBundle\Maker\MakeTextLineFieldType:
+        tags:
+            - { name: maker.command }
