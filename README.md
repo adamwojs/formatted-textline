@@ -7,7 +7,7 @@
 Open a command console, enter your project directory and execute:
 
 ```console
-$ composer require adamwojs/formatted-textline
+$ composer require adamwojs/ibexa-formatted-textline
 ```
 
 ### Applications that don't use Symfony Flex
@@ -18,7 +18,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```console
-$ composer require adamwojs/formatted-textline
+$ composer require adamwojs/ibexa-formatted-textline
 ```
 
 This command requires you to have Composer installed globally, as explained
