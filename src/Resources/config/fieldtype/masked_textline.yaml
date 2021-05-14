@@ -25,5 +25,7 @@ services:
             - { name: ezplatform.field_type.form_mapper.definition, fieldType: masked_textline }
 
     AdamWojs\IbexaFormattedTextLineBundle\Form\Mapper\MaskedTextLine\FieldValueFormMapper:
+        arguments:
+            $format: '@AdamWojs\IbexaFormattedTextLineBundle\FieldType\MaskedTextLine\Format'
         tags:
             - { name: ezplatform.field_type.form_mapper.value, fieldType: masked_textline }

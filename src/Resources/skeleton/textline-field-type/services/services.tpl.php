@@ -26,6 +26,8 @@ services:
 
     <?= $field_type_definition; ?>.form_mapper.value:
         class: AdamWojs\IbexaFormattedTextLineBundle\Form\Mapper\FormattedTextLine\FieldValueFormMapper
+        arguments:
+            $format: '@<?= $field_type_definition; ?>.format'
         tags:
             - { name: ezplatform.field_type.form_mapper.value, fieldType: <?= $field_type_identifier; ?> }
 

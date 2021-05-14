@@ -12,12 +12,30 @@ final class NullFormatTest extends TestCase
 {
     private const EXAMPLE_VALUE = 'Lorem ipsum dolor...';
 
+    /** @var \AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine\Format\NullFormat */
+    private $format;
+
+    /** @var \eZ\Publish\API\Repository\Values\ContentType\FieldDefinition */
+    private $fieldDefinition;
+
+    protected function setUp(): void
+    {
+        $this->format = new NullFormat();
+        $this->fieldDefinition = $this->createMock(FieldDefinition::class);
+    }
+
     public function testValidate(): void
     {
-        $format = new NullFormat();
+        $this->assertTrue($this->format->validate($this->fieldDefinition, self::EXAMPLE_VALUE));
+    }
 
-        $fieldDefinition = $this->createMock(FieldDefinition::class);
+    public function testGetExamples(): void
+    {
+        $this->assertEmpty($this->format->getExamples($this->fieldDefinition));
+    }
 
-        $this->assertTrue($format->validate($fieldDefinition, self::EXAMPLE_VALUE));
+    public function testGetMask(): void
+    {
+        $this->assertNull($this->format->getMask($this->fieldDefinition));
     }
 }

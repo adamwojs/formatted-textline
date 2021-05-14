@@ -13,4 +13,14 @@ final class Format implements FormatInterface
     {
         return true;
     }
+
+    public function getMask(FieldDefinition $fieldDefinition): ?string
+    {
+        return null;
+    }
+
+    public function getExamples(FieldDefinition $fieldDefinition): array
+    {
+        return [];
+    }
 }

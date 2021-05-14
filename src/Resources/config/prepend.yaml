@@ -1,3 +1,7 @@
+twig:
+  form_themes:
+    - '@IbexaFormattedTextLine/form_theme.html.twig'
+
 ezpublish:
   system:
     default:

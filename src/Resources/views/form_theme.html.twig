@@ -1,0 +1,11 @@
+{% extends 'bootstrap_4_layout.html.twig' %}
+
+{% block masked_text_widget %}
+    {% set attr = attr|merge({'data-input-mask': form.vars.mask}) %}
+
+    {{ block('form_widget') }}
+
+    {% if form.vars.help %}
+        <p class="text-secondary">{{ form.vars.help }}</p>
+    {% endif %}
+{% endblock %}

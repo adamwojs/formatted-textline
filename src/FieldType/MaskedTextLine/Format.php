@@ -56,4 +56,14 @@ final class Format implements FormatInterface
 
         return '/^' . implode('', $pattern) . '$/';
     }
+
+    public function getMask(FieldDefinition $fieldDefinition): ?string
+    {
+        return $fieldDefinition->fieldSettings['mask'] ?? null;
+    }
+
+    public function getExamples(FieldDefinition $fieldDefinition): array
+    {
+        return [];
+    }
 }

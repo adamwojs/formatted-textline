@@ -10,6 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 final class FormatTest extends TestCase
 {
+    private const EXAMPLE_MASK = '099.099.099.099';
+
     /** @var \AdamWojs\IbexaFormattedTextLineBundle\FieldType\MaskedTextLine\Format */
     private $format;
 
@@ -49,6 +51,20 @@ final class FormatTest extends TestCase
         yield from $this->acceptsEmpty('9', '?', 'a', 'c', 'x');
         yield from $this->rejectsEmpty('0', 'L', 'A', 'C', 'X');
         yield from $this->rejectsSpecial('0', '9', 'A', 'a', 'L', '?', 'C', 'c', 'X', 'x');
+    }
+
+    public function testGetMask(): void
+    {
+        $fieldDefinition = new FieldDefinition([
+            'fieldSettings' => [
+                'mask' => self::EXAMPLE_MASK,
+            ],
+        ]);
+
+        $this->assertEquals(
+            self::EXAMPLE_MASK,
+            $this->format->getMask($fieldDefinition)
+        );
     }
 
     private function acceptsEmpty(string ...$formats): iterable

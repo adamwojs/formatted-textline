@@ -6,7 +6,7 @@ module.exports = (eZConfig, eZConfigManager) => {
         entryName: 'ezplatform-admin-ui-content-edit-parts-js',
         newItems: [
             path.resolve(__dirname, '../public/js/jquery.mask.js'),
-            path.resolve(__dirname, '../public/js/masked-textline.js'),
+            path.resolve(__dirname, '../public/js/admin.input.mask.js'),
         ]
     });
 };
