@@ -44,7 +44,7 @@ final class IbexaFormattedTextLineExtension extends Extension implements Prepend
     private function prependJMSTranslation(ContainerBuilder $container): void
     {
         if (!$container->hasExtension('jms_translation')) {
-            return ;
+            return;
         }
 
         $container->prependExtensionConfig('jms_translation', [
