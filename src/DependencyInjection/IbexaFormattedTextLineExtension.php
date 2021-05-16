@@ -33,7 +33,9 @@ final class IbexaFormattedTextLineExtension extends Extension implements Prepend
 
         $container->addResource(new FileResource($configFile));
         foreach (Yaml::parseFile($configFile) as $name => $config) {
-            $container->prependExtensionConfig($name, $config);
+            if ($container->hasExtension($name)) {
+                $container->prependExtensionConfig($name, $config);
+            }
         }
 
         $this->prependJMSTranslation($container);
@@ -41,6 +43,10 @@ final class IbexaFormattedTextLineExtension extends Extension implements Prepend
 
     private function prependJMSTranslation(ContainerBuilder $container): void
     {
+        if (!$container->hasExtension('jms_translation')) {
+            return ;
+        }
+
         $container->prependExtensionConfig('jms_translation', [
             'configs' => [
                 'ibexa-formatted-textline' => [

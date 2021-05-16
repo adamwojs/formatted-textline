@@ -1,0 +1,24 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  ezplatform.search.elasticsearch.query.common.aggregation_visitor.field.formatted_textline_term:
+    class: Ibexa\Platform\ElasticSearchEngine\Query\AggregationVisitor\TermAggregationVisitor
+    factory: ['@Ibexa\Platform\ElasticSearchEngine\Query\AggregationVisitor\Factory\ContentFieldAggregationVisitorFactory', 'createTermAggregationVisitor']
+    arguments:
+      $aggregationClass: 'AdamWojs\IbexaFormattedTextLineBundle\Search\Query\Aggregation\FormattedTextLineTermAggregation'
+      $searchIndexFieldName: 'value'
+    tags:
+      - { name: ezplatform.search.elasticsearch.query.content.aggregation_visitor }
+      - { name: ezplatform.search.elasticsearch.query.location.aggregation_visitor }
+
+  ezplatform.search.elasticsearch.query.common.aggregation_result_extractor.field.formatted_textline_term:
+    class: Ibexa\Platform\ElasticSearchEngine\Query\ResultExtractor\AggregationResultExtractor\TermAggregationResultExtractor
+    arguments:
+      $aggregationClass: 'AdamWojs\IbexaFormattedTextLineBundle\Search\Query\Aggregation\FormattedTextLineTermAggregation'
+    tags:
+      - { name: ezplatform.search.elasticsearch.query.content.aggregation_result_extractor }
+      - { name: ezplatform.search.elasticsearch.query.location.aggregation_result_extractor }
+
