@@ -4,21 +4,21 @@ services:
     autoconfigure: true
     public: false
 
-  ezplatform.search.elasticsearch.query.common.aggregation_visitor.field.formatted_textline_term:
-    class: Ibexa\Platform\ElasticSearchEngine\Query\AggregationVisitor\TermAggregationVisitor
-    factory: ['@Ibexa\Platform\ElasticSearchEngine\Query\AggregationVisitor\Factory\ContentFieldAggregationVisitorFactory', 'createTermAggregationVisitor']
+  adamwojs.ibexa_formatted_textline.search.elasticsearch.query.common.aggregation_visitor.field.formatted_textline_term:
+    class: Ibexa\Elasticsearch\Query\AggregationVisitor\TermAggregationVisitor
+    factory: ['@Ibexa\Elasticsearch\Query\AggregationVisitor\Factory\SearchFieldAggregationVisitorFactory', 'createTermAggregationVisitor']
     arguments:
       $aggregationClass: 'AdamWojs\IbexaFormattedTextLineBundle\Search\Query\Aggregation\FormattedTextLineTermAggregation'
       $searchIndexFieldName: 'value'
     tags:
-      - { name: ezplatform.search.elasticsearch.query.content.aggregation_visitor }
-      - { name: ezplatform.search.elasticsearch.query.location.aggregation_visitor }
+      - { name: ibexa.search.elasticsearch.query.content.aggregation.visitor }
+      - { name: ibexa.search.elasticsearch.query.location.aggregation.visitor }
 
-  ezplatform.search.elasticsearch.query.common.aggregation_result_extractor.field.formatted_textline_term:
-    class: Ibexa\Platform\ElasticSearchEngine\Query\ResultExtractor\AggregationResultExtractor\TermAggregationResultExtractor
+  adamwojs.ibexa_formatted_textline.search.elasticsearch.query.common.aggregation_result_extractor.field.formatted_textline_term:
+    class: Ibexa\Elasticsearch\Query\ResultExtractor\AggregationResultExtractor\TermAggregationResultExtractor
     arguments:
       $aggregationClass: 'AdamWojs\IbexaFormattedTextLineBundle\Search\Query\Aggregation\FormattedTextLineTermAggregation'
     tags:
-      - { name: ezplatform.search.elasticsearch.query.content.aggregation_result_extractor }
-      - { name: ezplatform.search.elasticsearch.query.location.aggregation_result_extractor }
+      - { name: ibexa.search.elasticsearch.query.content.aggregation.result.extractor }
+      - { name: ibexa.search.elasticsearch.query.location.aggregation.result.extractor }
 

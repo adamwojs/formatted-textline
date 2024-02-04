@@ -8,24 +8,24 @@ services:
         arguments:
             $format: '@AdamWojs\IbexaFormattedTextLineBundle\FieldType\MaskedTextLine\Format'
         tags:
-            - { name: ezplatform.field_type, alias: masked_textline }
+            - { name:  ibexa.field_type, alias: masked_textline }
 
     AdamWojs\IbexaFormattedTextLineBundle\FieldType\MaskedTextLine\Format: ~
 
     AdamWojs\IbexaFormattedTextLineBundle\Persistence\Legacy\Converter\MaskedTextLineConverter:
         tags:
-            - { name: ezplatform.field_type.legacy_storage.converter, alias: masked_textline }
+            - { name: ibexa.field_type.storage.legacy.converter, alias: masked_textline }
 
     AdamWojs\IbexaFormattedTextLineBundle\FieldType\MaskedTextLine\SearchField:
         tags:
-            - { name: ezplatform.field_type.indexable, alias: masked_textline }
+            - { name: ibexa.field_type.indexable, alias: masked_textline }
 
     AdamWojs\IbexaFormattedTextLineBundle\Form\Mapper\MaskedTextLine\FieldDefinitionFormMapper:
         tags:
-            - { name: ezplatform.field_type.form_mapper.definition, fieldType: masked_textline }
+            - { name: ibexa.admin_ui.field_type.form.mapper.definition, fieldType: masked_textline }
 
     AdamWojs\IbexaFormattedTextLineBundle\Form\Mapper\MaskedTextLine\FieldValueFormMapper:
         arguments:
             $format: '@AdamWojs\IbexaFormattedTextLineBundle\FieldType\MaskedTextLine\Format'
         tags:
-            - { name: ezplatform.field_type.form_mapper.value, fieldType: masked_textline }
+            - { name: ibexa.admin_ui.field_type.form.mapper.value, fieldType: masked_textline }

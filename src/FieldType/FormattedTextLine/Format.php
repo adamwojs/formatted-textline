@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine;
 
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
 
 interface Format
 {

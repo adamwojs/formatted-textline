@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace <?= $namespace; ?>;
 
 use AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine\Format as FormatInterface;
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
 
 final class Format implements FormatInterface
 {

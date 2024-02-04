@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace AdamWojs\IbexaFormattedTextLineBundle\FieldType\MaskedTextLine;
 
 use AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine\Type as AbstractType;
-use eZ\Publish\Core\FieldType\ValidationError;
+use Ibexa\Core\FieldType\ValidationError;
 use JMS\TranslationBundle\Model\Message;
 use JMS\TranslationBundle\Translation\TranslationContainerInterface;
 
