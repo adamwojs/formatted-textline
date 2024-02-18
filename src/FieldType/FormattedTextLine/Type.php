@@ -13,8 +13,7 @@ use Ibexa\Core\FieldType\Value as BaseValue;
 
 abstract class Type extends FieldType
 {
-    /** @var \AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine\Format */
-    private $format;
+    private Format $format;
 
     public function __construct(Format $format)
     {
