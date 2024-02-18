@@ -49,7 +49,7 @@ final class IbexaFormattedTextLineExtension extends Extension implements Prepend
 
         $container->prependExtensionConfig('jms_translation', [
             'configs' => [
-                'ibexa-formatted-textline' => [
+                'ibexa_formatted_textline' => [
                     'dirs' => [
                         __DIR__ . '/../../',
                     ],

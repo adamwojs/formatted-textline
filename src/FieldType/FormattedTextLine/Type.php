@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine;
 
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinition;
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
-use eZ\Publish\Core\FieldType\FieldType;
-use eZ\Publish\Core\FieldType\ValidationError;
-use eZ\Publish\Core\FieldType\Value as BaseValue;
-use eZ\Publish\SPI\FieldType\Value as SPIValue;
+use Ibexa\Contracts\Core\FieldType\Value as SPIValue;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\FieldType;
+use Ibexa\Core\FieldType\ValidationError;
+use Ibexa\Core\FieldType\Value as BaseValue;
 
 abstract class Type extends FieldType
 {
-    /** @var \AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine\Format */
-    private $format;
+    private Format $format;
 
     public function __construct(Format $format)
     {

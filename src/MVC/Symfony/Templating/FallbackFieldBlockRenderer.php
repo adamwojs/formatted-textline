@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace AdamWojs\IbexaFormattedTextLineBundle\MVC\Symfony\Templating;
 
 use AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine\Value;
-use eZ\Publish\API\Repository\Values\Content\Field;
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinition;
-use eZ\Publish\Core\MVC\Symfony\Templating\Exception\MissingFieldBlockException;
-use eZ\Publish\Core\MVC\Symfony\Templating\FieldBlockRendererInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\MVC\Symfony\Templating\Exception\MissingFieldBlockException;
+use Ibexa\Core\MVC\Symfony\Templating\FieldBlockRendererInterface;
 
 final class FallbackFieldBlockRenderer implements FieldBlockRendererInterface
 {
-    /** @var \eZ\Publish\Core\MVC\Symfony\Templating\FieldBlockRendererInterface */
+    /** @var \Ibexa\Core\MVC\Symfony\Templating\FieldBlockRendererInterface */
     private $innerFieldBlockRenderer;
 
     public function __construct(FieldBlockRendererInterface $innerFieldBlockRenderer)
@@ -24,7 +24,9 @@ final class FallbackFieldBlockRenderer implements FieldBlockRendererInterface
     {
         try {
             return $this->innerFieldBlockRenderer->renderContentFieldView(
-                $field, $fieldTypeIdentifier, $params
+                $field,
+                $fieldTypeIdentifier,
+                $params
             );
         } catch (MissingFieldBlockException $e) {
             if ($field->value instanceof Value) {

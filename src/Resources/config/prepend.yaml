@@ -2,8 +2,8 @@ twig:
   form_themes:
     - '@IbexaFormattedTextLine/form_theme.html.twig'
 
-ezpublish:
+ibexa:
   system:
     default:
       fielddefinition_edit_templates:
-        - { template: "@ezdesign/fieldtype/maskedtextline_definition_edit.html.twig", priority: 1 }
+        - { template: "@ibexadesign/fieldtype/maskedtextline_definition_edit.html.twig", priority: 1 }

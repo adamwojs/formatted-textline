@@ -9,15 +9,13 @@ use Symfony\Component\Form\DataTransformerInterface;
 
 final class FormattedTextLineFieldTypeTransformer implements DataTransformerInterface
 {
-    public function transform($value): ?array
+    public function transform($value): ?string
     {
         if (empty($value)) {
             return null;
         }
 
-        return [
-            'text' => $value,
-        ];
+        return $value->getText();
     }
 
     public function reverseTransform($value): ?Value
@@ -26,6 +24,6 @@ final class FormattedTextLineFieldTypeTransformer implements DataTransformerInte
             return null;
         }
 
-        return new Value($value['text']);
+        return new Value($value);
     }
 }

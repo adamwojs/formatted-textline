@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine;
 
-use eZ\Publish\Core\FieldType\Value as BaseValue;
+use Ibexa\Core\FieldType\Value as BaseValue;
 
 final class Value extends BaseValue
 {

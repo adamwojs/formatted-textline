@@ -6,8 +6,8 @@ namespace AdamWojs\IbexaFormattedTextLineBundle\Form\Mapper\FormattedTextLine;
 
 use AdamWojs\IbexaFormattedTextLineBundle\FieldType\FormattedTextLine\Format;
 use AdamWojs\IbexaFormattedTextLineBundle\Form\Type\FormattedTextLineFieldType;
-use EzSystems\EzPlatformContentForms\Data\Content\FieldData;
-use EzSystems\EzPlatformContentForms\FieldType\FieldValueFormMapperInterface;
+use Ibexa\Contracts\ContentForms\Data\Content\FieldData;
+use Ibexa\Contracts\ContentForms\FieldType\FieldValueFormMapperInterface;
 use Symfony\Component\Form\FormInterface;
 
 class FieldValueFormMapper implements FieldValueFormMapperInterface
