@@ -6,13 +6,11 @@
   "keywords": [
     "ibexa-dxp"
   ],
-  "minimum-stability": "rc",
-  "prefer-stable": true,
   "require": {
     "php": "^7.4 || ^8.0",
-    "ibexa/core": "^4.6@dev",
-    "ibexa/admin-ui": "^4.6@dev",
-    "ibexa/doctrine-schema": "^4.6@dev",
+    "ibexa/core": "^4.6",
+    "ibexa/admin-ui": "^4.6",
+    "ibexa/doctrine-schema": "^4.6",
     "symfony/config": "^5.4",
     "symfony/dependency-injection": "^5.4",
     "symfony/event-dispatcher": "^5.4",
